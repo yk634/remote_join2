@@ -1,0 +1,22 @@
+shared:
+  image: node16
+  steps:
+    - echo: echo "test"
+
+jobs:
+  a2:
+    requires: [ ~sd@12351:a1 ]
+  a3:
+    requires: [ ~sd@12351:a1 ]
+
+  b2:
+    requires: [ ~sd@12351:b1 ]
+  b3:
+    requires: [ ~sd@12351:b1 ]
+
+  c2:
+    requires: [ ~sd@12351:c1 ]
+  c3:
+    requires: [ ~sd@12351:c1 ]
+    steps:
+      - sleep: sleep 10
